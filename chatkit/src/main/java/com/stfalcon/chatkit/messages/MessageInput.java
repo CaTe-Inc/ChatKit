@@ -19,17 +19,18 @@ package com.stfalcon.chatkit.messages;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.Space;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.core.view.ViewCompat;
+import androidx.legacy.widget.Space;
 
 import com.stfalcon.chatkit.R;
 
@@ -42,9 +43,9 @@ import java.lang.reflect.Field;
 public class MessageInput extends RelativeLayout
         implements View.OnClickListener, TextWatcher, View.OnFocusChangeListener {
 
-    protected EditText messageInput;
-    protected ImageButton messageSendButton;
-    protected ImageButton attachmentButton;
+    protected AppCompatEditText messageInput;
+    protected AppCompatImageButton messageSendButton;
+    protected AppCompatImageButton attachmentButton;
     protected Space sendButtonSpace, attachmentButtonSpace;
 
     private CharSequence input;
@@ -102,7 +103,7 @@ public class MessageInput extends RelativeLayout
      *
      * @return EditText
      */
-    public EditText getInputEditText() {
+    public AppCompatEditText getInputEditText() {
         return messageInput;
     }
 
@@ -111,7 +112,7 @@ public class MessageInput extends RelativeLayout
      *
      * @return ImageButton
      */
-    public ImageButton getButton() {
+    public AppCompatImageButton getButton() {
         return messageSendButton;
     }
 
@@ -226,9 +227,9 @@ public class MessageInput extends RelativeLayout
     private void init(Context context) {
         inflate(context, R.layout.view_message_input, this);
 
-        messageInput = (EditText) findViewById(R.id.messageInput);
-        messageSendButton = (ImageButton) findViewById(R.id.messageSendButton);
-        attachmentButton = (ImageButton) findViewById(R.id.attachmentButton);
+        messageInput = (AppCompatEditText) findViewById(R.id.messageInput);
+        messageSendButton = (AppCompatImageButton) findViewById(R.id.messageSendButton);
+        attachmentButton = (AppCompatImageButton) findViewById(R.id.attachmentButton);
         sendButtonSpace = (Space) findViewById(R.id.sendButtonSpace);
         attachmentButtonSpace = (Space) findViewById(R.id.attachmentButtonSpace);
 
